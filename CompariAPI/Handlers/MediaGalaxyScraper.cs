@@ -8,12 +8,11 @@ using HtmlAgilityPack;
 
 namespace CompariAPI.Handlers
 {
-    public class AltexScraper
+    public class MediaGalaxyScraper
     {
-        
         public static Offer GetOffer()
         {
-            string Link = "https://altex.ro/telefon-huawei-mate-10-pro-dual-sim-128-gb-grey/cpd/SMTMATE10PROGR/";         
+            string Link = "https://mediagalaxy.ro/telefon-huawei-mate-10-pro-dual-sim-128-gb-grey/cpd/SMTMATE10PROGR/";         
             HtmlWeb website = new HtmlWeb();
             website.AutoDetectEncoding = false;
             website.OverrideEncoding = Encoding.Default;
@@ -43,6 +42,5 @@ namespace CompariAPI.Handlers
 
             return offer;
         }
-
     }
 }

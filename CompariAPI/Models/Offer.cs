@@ -14,6 +14,7 @@ namespace CompariAPI.Models
         public string Availability { get; set; }
         public string Link { get; set; }
         public string Reviews { get; set; }
+        public string ReviewsLink { get; set; }
 
     }
 }
