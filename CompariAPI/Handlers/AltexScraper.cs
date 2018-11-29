@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Web;
+using CompariAPI.Helpers;
 using CompariAPI.Models;
 using HtmlAgilityPack;
 
@@ -10,10 +11,14 @@ namespace CompariAPI.Handlers
 {
     public class AltexScraper
     {
-        
-        public static Offer GetOffer()
+        public static ICollection<Offer> GetOffers(Shop shop, string search)
         {
-            string Link = "https://altex.ro/telefon-huawei-mate-10-pro-dual-sim-128-gb-grey/cpd/SMTMATE10PROGR/";         
+
+            return;
+        }
+        public static Offer GetOffer(Shop shop, string search)
+        {
+            string Link = OffersHelper.BuildLink(shop, search);
             HtmlWeb website = new HtmlWeb();
             website.AutoDetectEncoding = false;
             website.OverrideEncoding = Encoding.Default;

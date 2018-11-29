@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="HtmlAgilityPack, Version=1.8.10.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
       <HintPath>..\packages\HtmlAgilityPack.1.8.10\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
@@ -189,6 +195,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DAL\DBContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -196,10 +203,21 @@
     <Compile Include="Handlers\EmagScraper.cs" />
     <Compile Include="Handlers\MediaGalaxyScraper.cs" />
     <Compile Include="Helpers\OffersHelper.cs" />
+    <Compile Include="Migrations\201811280956264_InitialCreate.cs" />
+    <Compile Include="Migrations\201811280956264_InitialCreate.Designer.cs">
+      <DependentUpon>201811280956264_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201811291128281_AddFieldToShopModel.cs" />
+    <Compile Include="Migrations\201811291128281_AddFieldToShopModel.Designer.cs">
+      <DependentUpon>201811291128281_AddFieldToShopModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Offer.cs" />
+    <Compile Include="Models\Shop.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Interfaces\IOfferRepository.cs" />
     <Compile Include="Repositories\OfferRepository.cs" />
+    <Compile Include="Repositories\ShopRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
@@ -286,6 +304,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201811280956264_InitialCreate.resx">
+      <DependentUpon>201811280956264_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201811291128281_AddFieldToShopModel.resx">
+      <DependentUpon>201811291128281_AddFieldToShopModel.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

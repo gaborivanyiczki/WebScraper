@@ -10,7 +10,7 @@ namespace CompariAPI.Handlers
 {
     public class EmagScraper
     {
-        public static Offer GetOffer()
+        public static Offer GetOffer(Shop shop, string search)
         {
             string Link = "https://www.emag.ro/telefon-mobil-huawei-mate-10-pro-dual-sim-128gb-4g-titanium-grey-mate-10-pro-ds-grey/pd/DG1R30BBM/";         
             HtmlWeb website = new HtmlWeb();
