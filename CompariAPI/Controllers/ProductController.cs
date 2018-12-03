@@ -8,10 +8,11 @@ namespace CompariAPI.Controllers
 {
     public class ProductController : ApiController
     {
-        public IEnumerable<Offer> Get()
+        [HttpGet]
+        public IEnumerable<Offer> Get(string productName)
         {
 
-            return OfferRepository.GetOffers();
+            return OfferRepository.GetOffers(productName);
 
         }
     }

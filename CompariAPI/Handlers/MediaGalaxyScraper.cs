@@ -10,7 +10,7 @@ namespace CompariAPI.Handlers
 {
     public class MediaGalaxyScraper
     {
-        public static Offer GetOffer()
+        public static Offer GetOffer(Shop shop, string search)
         {
             string Link = "https://mediagalaxy.ro/telefon-huawei-mate-10-pro-dual-sim-128-gb-grey/cpd/SMTMATE10PROGR/";         
             HtmlWeb website = new HtmlWeb();
